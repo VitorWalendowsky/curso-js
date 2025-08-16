@@ -85,3 +85,29 @@ function exercicio3_4() {
     function mostrarResultado(mensagem) {
         alert(mensagem);
     }
+
+    function exercicio3_5 (){
+        let x = parseFloat(prompt("digite o valor de X"));
+        let y = parseFloat(prompt("digite o valor de Y"));
+        if (x === 0 && y === 0) {
+            alert ("Origem")
+        } 
+        if (x === 0 && y !== 0) {
+            alert ("Eixo Y");
+        }
+        if (y === 0 && x !== 0) {
+            alert ("Eixo X");
+        }
+        if (x > 0 && y > 0) {
+            alert ("Q1")
+        }
+        if (x < 0 && y > 0) {
+            alert ("Q2")
+        }
+        if (x < 0 && y < 0) {
+            alert ("Q3")
+        }
+        if (x > 0 && y < 0) {
+            alert ("Q4")
+        }
+    }
