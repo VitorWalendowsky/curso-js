@@ -111,3 +111,5 @@ function exercicio3_4() {
             alert ("Q4")
         }
     }
+
+    
