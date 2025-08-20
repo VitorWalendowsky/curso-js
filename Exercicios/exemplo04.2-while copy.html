@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="pt-br" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,15 +11,13 @@
   <style>
     .rainbow {
       background-size: 300% 300%;
-      background-image: linear-gradient(
-        -45deg,
-        #ff0000,
-        #ff9900,
-        #33cc33,
-        #3399ff,
-        #cc33cc,
-        #ff0000
-      );
+      background-image: linear-gradient(-45deg,
+          #ff0000,
+          #ff9900,
+          #33cc33,
+          #3399ff,
+          #cc33cc,
+          #ff0000);
       animation: rainbow 3s ease infinite;
     }
 
@@ -26,42 +25,41 @@
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
     }
   </style>
 </head>
+
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
 
-  <button
-    onclick="sistemaComMenu()"
-    id="menuButton"
+  <button onclick="sistemaComMenu()" id="menuButton"
     class="text-white text-2xl font-bold py-6 px-12 rounded-lg bg-purple-700 transition-all duration-500"
-    onmouseover="this.classList.add('rainbow')"
-    onmouseout="this.classList.remove('rainbow')"
-    autofocus
-  >
+    onmouseover="this.classList.add('rainbow')" onmouseout="this.classList.remove('rainbow')" autofocus>
     Menu
   </button>
 
   <script>
     // Adiciona evento de pressionamento da tecla Enter
-    document.getElementById('menuButton').addEventListener('keydown', function(event) {
+    document.getElementById('menuButton').addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
         sistemaComMenu(); // Chama a função ao apertar Enter
       }
     });
 
     // Foca o botão automaticamente ao carregar a página
-    window.onload = function() {
+    window.onload = function () {
       document.getElementById('menuButton').focus();
     };
   </script>
 
-  <script src="js/exemplo04.1-while.js"></script>
+  <script src="js/exemplo04.2-while.js"></script>
 </body>
+
 </html>

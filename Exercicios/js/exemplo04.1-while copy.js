@@ -248,7 +248,6 @@ function descobrirQuantidadeParaCadastrar() {
     }
 }
 
-
 // while com validação de string
 function validarString() {
     let cnpj = "";
@@ -261,6 +260,7 @@ function validarString() {
     }
 }
 
+// while com validação de int
 function validarInt() {
     let quantidadeColaboradores = 0;
     // min: 1
@@ -274,6 +274,33 @@ function validarInt() {
             alert("Máximo de 100 colaboradores");
         }
     }
+}
+
+function exemploSoma(){
+    let indice = 0;
+    let soma = 0;
+    while (indice < 3) {
+        let idade = parseInt(prompt("Digite a idade"));
+
+        soma = soma + idade;
+
+        indice = indice + 1;
+    }
+    alert("Soma: " + soma)
+}
+
+function exemploMedia(){
+    let indice = 0;
+    let soma = 0;
+    while (indice < 3) {
+        let idade = parseInt(prompt("Digite a idade"));
+
+        soma = soma + idade;
+
+        indice = indice + 1;
+    }
+    let media = soma / indice;
+    alert("Média: " + media)
 }
 
 function exemploComVariasValidacoes() {
@@ -320,12 +347,3 @@ function exemploComVariasValidacoes() {
         indice = indice + 1;
     }
 }
-
-// while com validação de int
-// while com ou
-// while com e
-
-
-
-
-// while com while validando string/int
