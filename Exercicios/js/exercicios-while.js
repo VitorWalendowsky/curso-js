@@ -141,11 +141,3 @@ function menuMini() {
 
     alert("Sistema encerrado.");
 }
-
-function exemploWhile() {
-    let indice = 0;
-    while (indice < 5) {
-        alert("Hello World");
-        indice++;
-    }
-}

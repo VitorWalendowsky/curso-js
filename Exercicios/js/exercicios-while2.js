@@ -77,3 +77,143 @@
 
 // Mostre no console uma “tabela” com duas colunas: Username (use padEnd(15," ")) e ID.
 // Massa de dados: Ana Maria Souza, João Pedro Lima, MARIA das DORES
+
+function cadastroDeEmailPorDominio() {
+    const dominios = {
+        "gmail.com": 0,
+        "outlook.com": 0,
+        "yahoo.com": 0,
+        "outros": 0
+    };
+    let invalidos = 0;
+
+    while (true) {
+        let email = prompt("Digite um e-mail (ou 'fim' para encerrar):").trim().toLowerCase();
+        if (email === "fim") break;
+
+        if (email.includes("@")) {
+            const partes = email.split("@");
+            if (partes.length === 2 && partes[1].includes(".")) {
+                const dominio = partes[1];
+                if (dominios.hasOwnProperty(dominio)) {
+                    dominios[dominio]++;
+                } else {
+                    dominios["outros"]++;
+                }
+            } else {
+                invalidos++;
+            }
+        } else {
+            invalidos++;
+        }
+    }
+
+    let resultado = "Total de e-mails por domínio:\n";
+    for (const [dominio, count] of Object.entries(dominios)) {
+        resultado += `${dominio}: ${count}\n`;
+    }
+    resultado += `E-mails inválidos: ${invalidos}`;
+    alert(resultado);
+}
+
+function maiorEMenorFrase() {
+    let menorLen = 999999999;
+    let menorFrase = "";
+    let maiorLen = 0;
+    let maiorFrase = "";
+
+    let contador = 0;
+    while (contador < 5) {
+        let frase = prompt("Digite uma frase:").trim();
+        const len = frase.length;
+
+        if (len < menorLen) {
+            menorLen = len;
+            menorFrase = frase;
+        }
+        if (len > maiorLen) {
+            maiorLen = len;
+            maiorFrase = frase;
+        }
+
+        contador++;
+    }
+
+    alert(`Menor (len ${menorLen}): "${menorFrase}"\nMaior (len ${maiorLen}): "${maiorFrase}"`);
+}
+
+function classificadorDeHorarios() {
+    const horarios = [];
+    let madrugadas = 0, manhas = 0, tardes = 0, noites = 0, invalidos = 0;
+
+    let contador = 0;
+    while (contador < 6) {
+        let horario = prompt("Digite um horário no formato hh:mm:").trim();
+        if (horario.length === 5 && horario.charAt(2) === ':') {
+            const hh = parseInt(horario.substring(0, 2));
+            const mm = parseInt(horario.substring(3, 5));
+
+            if (hh >= 0 && hh < 24 && mm >= 0 && mm < 60) {
+                if (hh < 5) {
+                    madrugadas++;
+                } else if (hh < 12) {
+                    manhas++;
+                } else if (hh < 18) {
+                    tardes++;
+                } else {
+                    noites++;
+                }
+            } else {
+                invalidos++;
+            }
+        } else {
+            invalidos++;
+        }
+        contador++;
+    }
+
+    alert(`Madrugada: ${madrugadas}\nManhã: ${manhas}\nTarde: ${tardes}\nNoite: ${noites}\nInválidos: ${invalidos}`);
+}
+
+function validadorDeCodigo() {
+    let validos = 0;
+    let invalidos = 0;
+    const validosCodigos = [];
+
+    let contador = 0;
+    while (contador < 5) {
+        let codigo = prompt("Digite um código no formato BLU-AAAA-NNNN:").trim();
+        const partes = codigo.split("-");
+
+        if (partes.length === 3 && partes[0] === "BLU" && partes[1].length === 4 && parseInt(partes[1]) >= 2000 && partes[2].length <= 4) {
+            const numeroFormatado = partes[2].padStart(4, "0");
+            validosCodigos.push(`BLU-${partes[1]}-${numeroFormatado}`);
+            validos++;
+        } else {
+            invalidos++;
+        }
+        contador++;
+    }
+
+    alert(`Códigos válidos:\n${validosCodigos.join("\n")}\nTotal válidos: ${validos}\nTotal inválidos: ${invalidos}`);
+}
+
+function usernameEID() {
+    let resultado = "Username          ID\n";
+    let contador = 1;
+
+    while (contador <= 3) {
+        let nomeCompleto = prompt("Digite o nome completo:").trim().toLowerCase();
+        const partes = nomeCompleto.split(" ");
+        const primeiroNome = partes[0];
+        const ultimoSobrenome = partes[partes.length - 1];
+
+        const username = primeiroNome.charAt(0) + ultimoSobrenome;
+        const id = contador.toString().padStart(6, "0");
+
+        resultado += `${username.padEnd(15, " ")} ${id}\n`;
+        contador++;
+    }
+
+    alert(resultado);
+}
