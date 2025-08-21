@@ -1,33 +1,3 @@
-// 6) Cadastro de e-mails por domínio
-// Objetivo: validar formato simples e contar por domínio.
-
-// Enquanto o usuário não digitar "fim":
-
-// Leia um e-mail (trim().toLowerCase()), pare se for "fim".
-
-// Valide: contém "@" e depois do @ existe "." (dica: split("@") → 2 partes; na parte do domínio, verifique includes(".")).
-
-// Some contadores por domínio: gmail.com, outlook.com, yahoo.com, outros.
-
-// Conte inválidos.
-
-// Ao final, mostre total por domínio e quantos inválidos.
-// Massa de dados: Ana@Gmail.com, joao@outlook.com, maria@yahoo.com, x@empresa.com.br, errado@@mail
-
-// 7) Maior e menor frase por tamanho
-// Objetivo: descobrir a frase mais curta e a mais longa.
-
-// Leia 5 frases com while. Para cada uma: trim() e pegue length.
-
-// Mantenha variáveis: menorLen, menorFrase, maiorLen, maiorFrase.
-
-// Ao final, mostre:
-
-// Menor (len X): "..."
-
-// Maior (len Y): "..."
-// Dica: inicialize menorLen com um número bem alto (ex.: 999999999) e maiorLen com 0.
-
 // 8) Classificador de horários “hh:mm”
 // Objetivo: validar e classificar horários lidos.
 
@@ -78,6 +48,7 @@
 // Mostre no console uma “tabela” com duas colunas: Username (use padEnd(15," ")) e ID.
 // Massa de dados: Ana Maria Souza, João Pedro Lima, MARIA das DORES
 
+<<<<<<< HEAD
 function cadastroDeEmailPorDominio() {
     const dominios = {
         "gmail.com": 0,
@@ -216,4 +187,89 @@ function usernameEID() {
     }
 
     alert(resultado);
+=======
+// __________________________________________________________________________________________
+// 6) Cadastro de e-mails por domínio
+// Objetivo: validar formato simples e contar por domínio.
+
+// Enquanto o usuário não digitar "fim":
+
+// Leia um e-mail (trim().toLowerCase()), pare se for "fim".
+
+// Valide: contém "@" e depois do @ existe "." (dica: split("@") → 2 partes; na parte do domínio, verifique includes(".")).
+
+// Some contadores por domínio: gmail.com, outlook.com, yahoo.com, outros.
+
+// Conte inválidos.
+
+// Ao final, mostre total por domínio e quantos inválidos.
+// Massa de dados: Ana@Gmail.com, joao@outlook.com, maria@yahoo.com, x@empresa.com.br, errado@@mail
+// ___________________________________________________________________________________________________
+
+
+
+function cadastroDeEmails() {
+    let gmailCount = 0;
+    let outlookCount = 0;
+    let yahooCount = 0;
+    let outrosCount = 0;
+    let invalidosCount = 0;
+
+    while (true) {
+        let input = prompt("Digite um e-mail (ou 'fim' para encerrar):")?.trim().toLowerCase();
+
+        if (input === "fim") break;
+
+        const partes = input.split("@");
+
+        if (partes.length === 2 && partes[1].includes(".")) {
+            const dominio = partes[1];
+
+            if (dominio === "gmail.com") {
+                gmailCount++;
+            } else if (dominio === "outlook.com") {
+                outlookCount++;
+            } else if (dominio === "yahoo.com") {
+                yahooCount++;
+            } else {
+                outrosCount++;
+            }
+        } else {
+            invalidosCount++;
+        }
+    }
+
+    console.log("Resumo:");
+    console.log(`Gmail: ${gmailCount}`);
+    console.log(`Outlook: ${outlookCount}`);
+    console.log(`Yahoo: ${yahooCount}`);
+    console.log(`Outros: ${outrosCount}`);
+    console.log(`Inválidos: ${invalidosCount}`);
+}
+
+
+// ____________________________________________________________________________________________________
+// 7) Maior e menor frase por tamanho
+// Objetivo: descobrir a frase mais curta e a mais longa.
+
+// Leia 5 frases com while. Para cada uma: trim() e pegue length.
+
+// Mantenha variáveis: menorLen, menorFrase, maiorLen, maiorFrase.
+
+// Ao final, mostre:
+
+// Menor (len X): "..."
+
+// Maior (len Y): "..."
+// Dica: inicialize menorLen com um número bem alto (ex.: 999999999) e maiorLen com 0.
+// _________________________________________________________________________________________________
+
+function MaiorEMenorFrase (){
+    let menorLen = 9999999999
+    let menorFrase = ""
+    let maiorLen = 0
+    let maiorFrase = ""
+
+
+>>>>>>> 067f5beda9843ab7c13ffe11caec178b2115941d
 }

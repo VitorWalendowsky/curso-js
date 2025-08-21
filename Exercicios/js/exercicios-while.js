@@ -141,3 +141,7 @@ function menuMini() {
 
     alert("Sistema encerrado.");
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 067f5beda9843ab7c13ffe11caec178b2115941d
