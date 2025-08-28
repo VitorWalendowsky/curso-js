@@ -34,27 +34,21 @@ function timeFutebol() {
     debugger
     let numeroJogadores = 0;
 
-    // let menorPeso = peso
-    // let maiorPeso = peso
-    // let nomeMenorPeso = nome
-    // let nomeMaiorPeso = nome
+    let menorPeso, nomeMenorPeso
+    let maiorPeso, nomeMaiorPeso
 
-    // let maiorAltura = altura
-    // let nomeMaiorAltura = nome
+    let maiorAltura, nomeMaiorAltura
 
-    // let maiorNome = nome.length
-    // let menorNome = nome.length
+    let maiorNome, menorNome
 
-    // let menorCartoesAmarelos = quantidadeAmarelos
-    // let maiorCartoesAmarelos = quantidadeAmarelos
+    let menorCartoesAmarelos, maiorCartoesAmarelos
 
-    // let menorCartoesVermelhos = quantidadeVermelhos
-    // let maiorCartoesVermelhos = quantidadeVermelhos
+    let menorCartoesVermelhos, maiorCartoesVermelhos
 
     let sexoMasculino = 0
     let sexoFeminino = 0
 
-    while (numeroJogadores <= 21) {
+    while (numeroJogadores <= 1) {
         numeroJogadores ++;
 
         let nome = prompt("Digite o nome do joador").trim()
@@ -74,6 +68,6 @@ function timeFutebol() {
     
       
     }
-    
+    console.log(); 
 }
-console.log(jogadores); 
+
