@@ -48,7 +48,6 @@
 // Mostre no console uma “tabela” com duas colunas: Username (use padEnd(15," ")) e ID.
 // Massa de dados: Ana Maria Souza, João Pedro Lima, MARIA das DORES
 
-<<<<<<< HEAD
 function cadastroDeEmailPorDominio() {
     const dominios = {
         "gmail.com": 0,
@@ -187,8 +186,79 @@ function usernameEID() {
     }
 
     alert(resultado);
-=======
-// __________________________________________________________________________________________
+}
+
+
+
+
+// 2) Processar linhas “CSV” simples (id;nome;cpf;data)
+// Objetivo: ler 5 linhas e validar campos por regras básicas de string.
+
+// Repita 5x com while: peça uma linha no formato id;nome;cpf;aaaa-mm-dd.
+
+// Use split(";") e verifique se tem 4 partes.
+
+// Regras:
+
+// id: só dígitos (teste com replace(/\d/g,"") ⇒ deve virar "") e > 0.
+
+// nome: trim() e length ≥ 7.
+
+// cpf: tamanho 14 e substring nas posições dos pontos e traço (xxx.xxx.xxx-xx).
+
+// data: tamanho 10 e charAt(4) === '-' e charAt(7) === '-'.
+
+// Conte válidas e inválidas; liste no console quais índices foram inválidos.
+
+// Dica: Evite regex complexa; use length, substring, charAt, replace.
+
+// 3) Frases: contagem e classificação por pontuação
+// Objetivo: ler 6 frases e classificar por final ?, ! ou outro.
+
+// Repita 6x: leia uma frase, faça trimEnd() e pegue o último caractere com substring(len-1).
+
+// Contadores: perguntas (terminam com ?), exclamações (!) e neutras (qualquer outro).
+
+// Ao final, mostre os três totais e o percentual de cada (use toFixed(1)).
+
+// Massa de dados:
+// “Oi?” · “Tudo bem!” · “Amanhã eu vou” · “Sério!” · “Como assim?” · “Tá certo”
+
+// 4) Datas: mais antiga, mais recente e contagem por mês
+// Objetivo: ler 5 datas dd/mm/aaaa, comparar e resumir.
+
+// Para cada data, use split("/") em dia, mes, ano.
+
+// Monte um número para comparação: chave = ano + mes + dia como string ("20250409") e compare lexicograficamente (ou converta pra parseInt).
+
+// Atualize maisAntiga e maisRecente (guarde a data original).
+
+// Conte quantas datas de março (mes === "03") e quantas de dezembro ("12").
+
+// Ao final, exiba: mais antiga, mais recente, contagem de março e dezembro.
+
+// Dica: Garanta zero à esquerda no mês/dia usando padStart(2,"0") se o aluno digitar “3/9/2025”.
+
+// 5) Normalizador de telefones (somente dígitos → formato padrão)
+// Objetivo: ler 4 telefones em formatos variados e normalizar.
+
+// Para cada telefone:
+
+// Remova espaços, (, ), - usando replaceAll.
+
+// Se tiver 10 dígitos (fixo), formate como "(DD) XXXX-XXXX".
+
+// Se tiver 11 dígitos (celular), formate como "(DD) 9XXXX-XXXX".
+
+// Caso contrário, marque como inválido.
+
+// Use substring e padStart se precisar ajustar.
+
+// Ao final, liste os 4 números formatados e a quantidade inválida.
+
+// Massa de dados:
+// (47) 99999-1234 · 47 3232-1122 · 4732321122 · 47-9-8888-7777
+
 // 6) Cadastro de e-mails por domínio
 // Objetivo: validar formato simples e contar por domínio.
 
@@ -204,51 +274,7 @@ function usernameEID() {
 
 // Ao final, mostre total por domínio e quantos inválidos.
 // Massa de dados: Ana@Gmail.com, joao@outlook.com, maria@yahoo.com, x@empresa.com.br, errado@@mail
-// ___________________________________________________________________________________________________
 
-
-
-function cadastroDeEmails() {
-    let gmailCount = 0;
-    let outlookCount = 0;
-    let yahooCount = 0;
-    let outrosCount = 0;
-    let invalidosCount = 0;
-
-    while (true) {
-        let input = prompt("Digite um e-mail (ou 'fim' para encerrar):")?.trim().toLowerCase();
-
-        if (input === "fim") break;
-
-        const partes = input.split("@");
-
-        if (partes.length === 2 && partes[1].includes(".")) {
-            const dominio = partes[1];
-
-            if (dominio === "gmail.com") {
-                gmailCount++;
-            } else if (dominio === "outlook.com") {
-                outlookCount++;
-            } else if (dominio === "yahoo.com") {
-                yahooCount++;
-            } else {
-                outrosCount++;
-            }
-        } else {
-            invalidosCount++;
-        }
-    }
-
-    console.log("Resumo:");
-    console.log(`Gmail: ${gmailCount}`);
-    console.log(`Outlook: ${outlookCount}`);
-    console.log(`Yahoo: ${yahooCount}`);
-    console.log(`Outros: ${outrosCount}`);
-    console.log(`Inválidos: ${invalidosCount}`);
-}
-
-
-// ____________________________________________________________________________________________________
 // 7) Maior e menor frase por tamanho
 // Objetivo: descobrir a frase mais curta e a mais longa.
 
@@ -262,14 +288,64 @@ function cadastroDeEmails() {
 
 // Maior (len Y): "..."
 // Dica: inicialize menorLen com um número bem alto (ex.: 999999999) e maiorLen com 0.
-// _________________________________________________________________________________________________
-
-function MaiorEMenorFrase (){
-    let menorLen = 9999999999
-    let menorFrase = ""
-    let maiorLen = 0
-    let maiorFrase = ""
 
 
->>>>>>> 067f5beda9843ab7c13ffe11caec178b2115941d
-}
+// _______________________________________________________________________________________
+// 1) Sistema de compras com preço BR + relatório
+// Objetivo: cadastrar produtos até o usuário parar, limpar preço no formato BR e gerar um pequeno relatório.
+
+// Enquanto desejaCadastrar === "sim":
+
+// Leia nome do produto (use trim() e valide length ≥ 2).
+
+// Leia preço em BR (R$ 1.299,90 etc.).
+
+// Limpe com replace/replaceAll: remova R$, espaços e pontos; troque , por .; parseFloat.
+
+// Acumule total, quantidade, maior preço e nome do mais caro.
+
+// Pergunte se deseja cadastrar outro (sim/não), normalizando com toLowerCase().trim().
+
+// Ao final, mostre no console uma “tabela” com 2 colunas: Produto (use padEnd(20," ")) e Preço (toFixed(2)).
+
+// Mostre total e média com toFixed(2).
+
+// Massa de dados:
+// Batata Palha | R$ 12,50 · Arroz 5kg | 29,90 · Leite | R$ 4,79
+// ____________________________________________________________________________________________
+function sistemaCompras() {
+    let desejaCadastrar = prompt("Deseja cadastrar produto? (sim/não)").toLowerCase().trim();
+  
+    while (desejaCadastrar === "sim") {
+      let nomeProduto = prompt("Insira o nome do produto").trim();
+  
+      if (nomeProduto.length >= 2) {
+        console.log("Produto válido:", nomeProduto);
+      } else {
+        console.log("Produto deve ter pelo menos 2 caracteres.");
+        continue; // volta para o início do loop
+      }
+  
+      let precoStr = prompt("Insira o preço do produto (ex: R$ 1.299,90)").trim();
+  
+      let precoLimpo = precoStr
+        .replace("R$", "")
+        .replace(/\./g, "")
+        .replace(",", ".")
+        .trim();
+  
+      let preco = parseFloat(precoLimpo);
+  
+      if (!isNaN(preco)) {
+        console.log(`Preço cadastrado: R$ ${preco.toFixed(2).replace(".", ",")}`);
+      } else {
+        console.log("Preço inválido.");
+      }
+  
+      // Perguntar novamente
+      desejaCadastrar = prompt("Deseja cadastrar outro produto? (sim/não)").toLowerCase().trim();
+    }
+  
+    console.log("Cadastro finalizado.");
+  }
+  
