@@ -1,142 +1,116 @@
-function somar(){
-    // pegar um elemento daa tela por ID
-    //<elemento id="numero1">
+function somar() {
+    // Pegar um elemento da tela por id
+    // <elemento id="numero1">
     let campoNumero1 = document.getElementById("numero1");
+    console.log(campoNumero1);
+
     let campoNumero2 = document.getElementById("numero2");
+    console.log(campoNumero2);
 
-    let numero1 = parseInt(campoNumero1.value);
-    let numero2 = parseInt(campoNumero2.value);
+    let numero1 = parseFloat(campoNumero1.value);
+    let numero2 = parseFloat(campoNumero2.value);
 
-    console.log(campoNumero1.value);
-    console.log(campoNumero2.value);
+    console.log(numero1);
+    console.log(numero2);
 
     let soma = numero1 + numero2;
-    alert("A soma é: " + soma);
+    alert("Soma: " + soma);
 }
 
-function subtrair(){
-    let campoNumero1 = document.getElementById("numero1");
-    let campoNumero2 = document.getElementById("numero2");
-
-    let numero1 = parseInt(campoNumero1.value);
-    let numero2 = parseInt(campoNumero2.value);
-
-    console.log(campoNumero1.value);
-    console.log(campoNumero2.value);
-
-    let subtração = numero1 - numero2;
-    alert("A subtração é: " + subtração);
-}
-function multiplicar(){
-    let campoNumero1 = document.getElementById("numero1");
-    let campoNumero2 = document.getElementById("numero2");
-
-    let numero1 = parseInt(campoNumero1.value);
-    let numero2 = parseInt(campoNumero2.value);
-
-    console.log(campoNumero1.value);
-    console.log(campoNumero2.value);
-
-    let multiplicar = numero1 * numero2;
-    alert("A multiplicação é: " + multiplicar);
-}
-function dividir(){
-    let campoNumero1 = document.getElementById("numero1");
-    let campoNumero2 = document.getElementById("numero2");
-
-    let numero1 = parseInt(campoNumero1.value);
-    let numero2 = parseInt(campoNumero2.value);
-
-    console.log(campoNumero1.value);
-    console.log(campoNumero2.value);
-
-    let divisao = numero1 / numero2;
-    alert("A divisão é: " + divisao);
-}
+// Subtrair
+// Multiplicar
+// Dividir
 
 // function definirCorAzul(){
 //     let itens = document.getElementsByClassName("item");
-//     for(let i=0; i<itens.length; i++){
-//         itens[i].style.backgroundColor = "#34b4dc";
+//     // console.log(itens);
+//     for(let i = 0; i < itens.length; i = i + 1){
+//         let item = itens[i];
+//         item.style.backgroundColor = "#34b4de";
 //     }
-//     console.log(itens);
+//     // itens[0].style.backgroundColor = "#34b4de";
+//     // itens[1].style.backgroundColor = "#34b4de";
+//     // itens[2].style.backgroundColor = "#34b4de";
+//     // itens[3].style.backgroundColor = "#34b4de";
 // }
-// function definirCorPreto(){
-//     let itens = document.getElementsByClassName("item");
-//     for(let i=0; i<itens.length; i++){
-//         itens[i].style.backgroundColor = "#000";
-//     }
-//     console.log(itens);
-// }
-// function definirCorRoxo(){
-//     let itens = document.getElementsByClassName("item");
-//     for(let i=0; i<itens.length; i++){
-//         itens[i].style.backgroundColor = "#a734dcff";
-//     }
-//     console.log(itens);
-// }
-// function definirCorVerde(){
-//     let itens = document.getElementsByClassName("item");
-//     for(let i=0; i<itens.length; i++){
-//         itens[i].style.backgroundColor = "#0fe90fff";
-//     }
-//     console.log(itens);
-// }
-// function definirCorVermelho(){
-//     let itens = document.getElementsByClassName("item");
-//     for(let i=0; i<itens.length; i++){
-//         itens[i].style.backgroundColor = "#e00707ff";
-//     }
-//     console.log(itens);
-// }
+
 
 function definirCor(nomeCor) {
     let itens = document.getElementsByClassName("item");
 
     let cor = "";
-    if (nomeCor === "Azul") {
-        cor = "#34b4dc";
-    } else if (nomeCor === "Preto") {
-        cor = "#000";
-    } else if (nomeCor === "Roxo") {
-        cor = "#a734dcff";
-    } else if (nomeCor === "Verde") {
-        cor = "#0fe90fff";
-    }   else if (nomeCor === "Vermelho") {
-        cor = "#e00707ff";
+    if (nomeCor === "azul") {
+        cor = "#34b4de";
+    } else if (nomeCor === "roxo") {
+        cor = "#a034deff"
+    } else if (nomeCor === "verde") {
+        cor = "#34de64ff"
     }
-    for (let i = 0; i < itens.length; i++) {
+
+    for (let i = 0; i < itens.length; i = i + 1) {
         let item = itens[i];
         item.style.backgroundColor = cor;
     }
 }
 
-function alterarVisibilidade(){
-    let iframe = document.getElementsByTagName("iframe");
-    // sei que nossa tela tem um iframe, n vou fazer um for
-    // porém se tiver mais de um é necessário utilizar for
-    if (iframe[0].style.display === "inline"){
-        iframe[0].style.display = "none";
+function alterarVisibilidade() {
+    let iframes = document.getElementsByTagName("iframe");
+    // Sei que na nossa tela só tem um iframe, n vou fazer um for, 
+    // porém se tiver mais do que é necessário utilizar for
+    if (iframes[0].style.display === "inline") {
+        iframes[0].style.display = "none";
     } else {
-        iframe[0].style.display = "inline";
+        iframes[0].style.display = "inline";
     }
 }
 
-function limparCampos(){
-    let campoNome = document.getElementById("nome")[0];
+function limparCampos() {
+    let campoNome = document.getElementsByName("nome")[0];
     campoNome.value = "";
-
-    let campoSobrenome = document.getElementById("sobrenome")[0];
+    let campoSobrenome = document.getElementsByName("sobrenome")[0];
     campoSobrenome.value = "";
+    let resultado = document.getElementById("resultadoNomes");
+    resultado.innerText = "";
 }
 
-function apresentarNomeCompleto(){
-    let campoNome = document.getElementById("nome")[0];
-    let campoSobrenome = document.getElementById("sobrenome")[0];
+function apresentarNomeCompleto() {
+    let campoNome = document.getElementsByName("nome")[0];
+    let campoSobrenome = document.getElementsByName("sobrenome")[0];
 
     let nome = campoNome.value;
     let sobrenome = campoSobrenome.value;
 
     let nomeCompleto = `${nome} ${sobrenome}`;
-    alert(`O nome completo é: ${nomeCompleto}`);
+
+    let resultado = document.getElementById("resultadoNomes");
+    resultado.innerText = `Nome completo: ${nomeCompleto}`;
+}
+
+function exemploQuerySelector() {
+    let paragrafo = document.querySelector("div#jogos p")
+    // Adicionar uma classe ao elemento
+    paragrafo.classList.add("alternativo");
+}
+
+function exemploQuerySelectorAll() {
+    let paragrafos = document.querySelectorAll("div#jogos p");
+
+    for (let i = 0; i < paragrafos.length; i += 1) {
+        let paragrafo = paragrafos[i];
+        if (i % 2 == 0) {
+            // Adicionar uma classe 'destaque' ao elemento
+            paragrafo.classList.add("destaque");
+        } else {
+            paragrafo.classList.add("elegante");
+        }
+    }
+}
+
+function reset() {
+    let paragrafos = document.querySelectorAll("div#jogos p");
+    for (let i = 0; i < paragrafos.length; i += 1) {
+        let paragrafo = paragrafos[i];
+        // Aqui, o ... (spread) expande todas as classes atuais do elemento, removendo todas de uma vez.
+        paragrafo.classList.remove(...paragrafo.classList);
+    }
 }
