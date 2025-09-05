@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/exemplo01-seletores.css">
+</head>
+<body>
+    <h1>Exemplo de Seletores</h1>
+
+    <h2>Seletor de Id</h2>
+    <div id="div1"></div>
+    <form action="#" id="formulario-calculadora">
+        <input type="number" id="numero1" placeholder="Número 1">
+        <input type="number" id="numero2" placeholder="Número 2">
+        <button type="button" id="btn-somar" onclick="somar()">Somar</button>
+        <button type="button" id="btn-somar" onclick="subtrair()">Subtrair</button>
+        <button type="button" id="btn-somar" onclick="multiplicar()">Multiplicar</button>
+        <button type="button" id="btn-somar" onclick="dividir()">Dividir</button>
+        <p id="resultado"></p>
+    </form>
+    
+    <h2>Seletor de Classe</h2>
+    <div class="elementos">
+        <div>
+            <divc class="item">Item 1</divc>
+            <divc class="item">Item 2</divc>
+            <divc class="item">Item 3</divc>
+            <divc class="item">Item 4</divc>
+        </div>
+        <button onclick="definirCor('Azul')">Azul</button>
+        <button onclick="definirCor('Preto')">Preto</button>
+        <button onclick="definirCor('Roxo')">Roxo</button>
+        <button onclick="definirCor('Verde')">Verde</button>
+        <button onclick="definirCor('Vermelho')">Vermelho</button>
+        </div>
+
+        <script src="assets\js\exemplo01-seletores.js"></script>
+
+    <h2>Seletor de Tag</h2>
+    <div>
+        <iframe src="https://giphy.com/embed/hDMJjUNxLhIjK" width="100" height="100" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <button class="btn" onclick="alterarVisibilidade()">Alterar Visibilidade</button>
+    </div>
+
+    <h2>Seletor de Name</h2>
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" name="nome" id="campo-nome">
+        <label for="campo-sobrenome">Sobrenome</label>
+        <input type="text" name="sobrenome" id="campo-sobrenome">
+        <button class="btn" onclick="apresentarNomeCompleto()">Apresentar Nomes Completo</button>
+        <button class="btn" onclick="limparCampos()">Limpar campos</button>
+    </div>
+</body>
+</html>
