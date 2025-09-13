@@ -35,14 +35,14 @@
                         <div>
                             <label for="nome">Nome do jogo</label>
                             <input type="text" id="nome" name="nome" placeholder="Ex.: Elden Ring" minlength="2"
-                                maxlength="80" required />
+                                value="Elden Ring" maxlength="80" required />
                         </div>
 
                         <div class="row">
                             <div>
                                 <label for="preco">Preço (R$)</label>
                                 <input type="number" id="preco" name="preco" placeholder="Ex.: 299.90" min="0"
-                                    step="0.01" inputmode="decimal" required />
+                                    value="300.20" step="0.01" inputmode="decimal" required />
                             </div>
 
                             <div>
@@ -51,7 +51,7 @@
                                     <option value="" disabled selected>Selecione uma categoria</option>
                                     <option>Ação</option>
                                     <option>Aventura</option>
-                                    <option>RPG</option>
+                                    <option selected>RPG</option>
                                     <option>Estratégia</option>
                                     <option>Esportes</option>
                                     <option>Corrida</option>
@@ -68,7 +68,7 @@
 
                         <div class="actions">
                             <button class="btn-outline" type="reset">Limpar</button>
-                            <button class="btn" id="btn-salvar" type="button">Salvar</button>
+                            <button class="btn" id="btn-salvar" type="button" onclick="salvarJogo()">Salvar</button>
                         </div>
                     </form>
                 </div>
@@ -90,54 +90,23 @@
                             </tr>
                         </thead>
                         <tbody id="tbody-jogos">
-                            <!-- Exemplos estáticos (remova ao integrar o JS) -->
+                            <!-- Exemplos estáticos
                             <tr>
                                 <td>Cyber Horizon</td>
                                 <td><span class="chip">Ação</span></td>
                                 <td class="price">R$ 199,90</td>
                                 <td class="table-actions">
                                     <button class="btn-edit" type="button" title="Editar">
-                                        <!-- Ícone lápis -->
-                                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M3 17.25V21h3.75L18.81 8.94l-3.75-3.75L3 17.25Zm18-11.06a1 1 0 0 0 0-1.41l-1.99-1.99a1 1 0 0 0-1.41 0l-1.59 1.59 3.75 3.75 1.24-1.24Z" />
-                                        </svg>
+                                        <i class="fas fa-pencil"></i>
                                         Editar
                                     </button>
                                     <button class="btn-danger" type="button" title="Apagar">
-                                        <!-- Ícone lixeira -->
-                                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1Zm1 3h4V5h-4v1ZM7 8v12h10V8H7Zm3 3h2v7h-2v-7Zm4 0h2v7h-2v-7Z" />
-                                        </svg>
+                                        <i class="fas fa-trash"></i>
                                         Apagar
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Legends of Aurora</td>
-                                <td><span class="chip"
-                                        style="background:rgba(0,255,167,.15);border-color:rgba(0,255,167,.35);color:#c9ffef">RPG</span>
-                                </td>
-                                <td class="price">R$ 299,90</td>
-                                <td class="table-actions">
-                                    <button class="btn-edit" type="button" title="Editar">
-                                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M3 17.25V21h3.75L18.81 8.94l-3.75-3.75L3 17.25Zm18-11.06a1 1 0 0 0 0-1.41l-1.99-1.99a1 1 0 0 0-1.41 0l-1.59 1.59 3.75 3.75 1.24-1.24Z" />
-                                        </svg>
-                                        Editar
-                                    </button>
-                                    <button class="btn-danger" type="button" title="Apagar">
-                                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M9 3h6a1 1 0 0 1 1 1v2h4v2h-1v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4V6h4V4a1 1 0 0 1 1-1Zm1 3h4V5h-4v1ZM7 8v12h10V8H7Zm3 3h2v7h-2v-7Zm4 0h2v7h-2v-7Z" />
-                                        </svg>
-                                        Apagar
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- Fim dos exemplos -->
+                             -->
                         </tbody>
                     </table>
                 </div>
@@ -148,6 +117,8 @@
     <footer>
         <small>Pronto para seus Jogos 🚀</small>
     </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <script src="assets/js/exemplo03-crud.js"></script>
 </body>
