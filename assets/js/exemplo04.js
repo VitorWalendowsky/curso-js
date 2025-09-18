@@ -137,8 +137,9 @@ alunos.push({
     id: crypto.randomUUID(),
     nome:"João",
     sobrenome: "Silva",
-    notas[],
+    notas:[],
 });
+
 // b)
 alunos.push({
     id: crypto.randomUUID(),
